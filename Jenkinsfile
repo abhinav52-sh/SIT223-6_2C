@@ -10,8 +10,8 @@ pipeline {
         
         stage('Unit and Integration Tests') {
             steps {
-                echo 'Stage 2: Running unit tests...'
-                echo 'Stage 2: Running integration tests...'
+                echo 'Stage 2: Running unit tests using Cypress'
+                echo 'Stage 2: Running integration tests using Selenium'
             }
         }
         
