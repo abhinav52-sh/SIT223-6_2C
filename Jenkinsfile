@@ -29,7 +29,7 @@ pipeline {
         
         stage('Deploy to Staging') {
             steps {
-                echo 'Stage 5: Deploying to staging on AWS EC2 instance...'
+                echo 'Stage 5: Deploying to staging using Docker...'
             }
         }
         
@@ -41,7 +41,7 @@ pipeline {
         
         stage('Deploy to Production') {
             steps {
-                echo 'Stage 7: Deploying to production on AWS EC2 instance...'
+                echo 'Stage 7: Deploying to production using Netlify...'
             }
         }
     }
@@ -51,13 +51,15 @@ pipeline {
             echo 'Pipeline executed successfully.'
             emailext body: 'Pipeline executed successfully.',
                      subject: 'Pipeline Status: Success',
-                     to: 'your_email@example.com'
+                     to: 'abhinav52test@gmail.com',
+                     attachLog: true
         }
         failure {
             echo 'Pipeline execution failed.'
             emailext body: 'Pipeline execution failed.',
                      subject: 'Pipeline Status: Failure',
-                     to: 'your_email@example.com'
+                     to: 'abhinav52test@gmail.com',
+                     attachLog: true
         }
     }
 }
